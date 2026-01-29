@@ -1,6 +1,9 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
-
+# Only consider v0.* tags for "previous release" / $PREVIOUS_TAG (avoids picking 1.x)
+tag-prefix: 'v0.'
+# Consider only releases whose target branch matches current ref (pgjdbc-style; helps if 1.x vs 0.x on different branches)
+filter-by-commitish: true
 
 categories:
   - title: '💥 Breaking Changes'
